@@ -1,6 +1,10 @@
 # Secure-Headers
 
-secure header best practices config for Apache, Nginx, lighttpd 
+secure header best practices config for Apache, Nginx, lighttpd, Cloudflare, netlify 
+
+***attention : This repository is not ready to use, im trying to get it ready my free time***
+
+***Pull requests are always welcome :)***
 
 ## why secure header
 > I suggest you don't copy past config from this repo, especially if you have a custom web application our example may break your software. read these articles first 
@@ -15,7 +19,11 @@ secure header best practices config for Apache, Nginx, lighttpd
 
 ## report script
 ```bash
-report.py -u <url>
+python report.py -h #for help
+python report.py -u <url> -o <Output Filename> -l <Target List Filename>
+python report.py -u https://facebook.com -o FBreport # for check one site
+python report.py -l input.text -o report #for list input
+
 ```
 
 ## best practices
@@ -103,7 +111,10 @@ how to add header to [Apache](), [nginx](), [lighttpd]()
     - [netlify use _headers file](https://www.netlify.com/docs/headers-and-basic-auth/#custom-headers)
 ## TODO
 - add netlify.com secure headers best practice
-- add Cloudflare Workers custom headers config 
-- add CVS and Json export to report script
-- add list input to report script
-- add secure header suggestions  
+- add Cloudflare Workers custom headers config and best practice
+- add lighttpd and apache secure config. also, fix .htaccess config
+- add CVS export to report script
+- add secure header suggestions to report script
+- add web server config generation to report script
+- add simple intro document for explain secure header in human language
+- add persian document!(اگه کسی خواست)

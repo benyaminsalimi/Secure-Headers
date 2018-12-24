@@ -1,7 +1,6 @@
 #!/usr/bin/python
 """
 GitHub repo : https://github.com/benyaminsalimi/secure-headers
-Pull requests are always welcome :)
 """
 import getopt
 import requests
@@ -140,6 +139,7 @@ def main(argv):
         json_report(url, filename)
 
     print("Your report file is ready : " + filename)
+    sys.exit(2)
     """
     #TODO: add report only arg
     info = 'more information about this header https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/'
