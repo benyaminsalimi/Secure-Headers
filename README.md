@@ -91,6 +91,8 @@ how to add header to [Apache](), [nginx](), [lighttpd]()
 - [apache](/example/nginx.conf) or  [.htaccess](/example/.htaccess)
 - [nigix](/example/)
 - [lighttpd](/example/)
+- [Cloudflare Workers](/example/)
+- [netlify](/example/)
 
 ## SSL
 - [Mozilla SSL Configuration Generator
@@ -100,7 +102,8 @@ how to add header to [Apache](), [nginx](), [lighttpd]()
     - [with worker cloudflare  you can add secure header](https://stackoverflow.com/a/50797627/4859688)
     - [netlify use _headers file](https://www.netlify.com/docs/headers-and-basic-auth/#custom-headers)
 ## TODO
-- add netlify.com secure header best practice
+- add netlify.com secure headers best practice
+- add Cloudflare Workers custom headers config 
 - add CVS and Json export to report script
 - add list input to report script
 - add secure header suggestions  
