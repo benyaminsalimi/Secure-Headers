@@ -92,13 +92,13 @@ how to add header to [Apache](), [nginx](), [lighttpd]()
 - [nigix](/example/)
 - [lighttpd](/example/)
 
-## SSL links 
+## SSL
 - [Mozilla SSL Configuration Generator
  Apache ](https://mozilla.github.io/server-side-tls/ssl-config-generator/)
-- Free ssl + secure header option
+- Free ssl + secure header
     - [letsencrypt you need to config secure header in your web server](https://letsencrypt.org/)
-    - [cloudflare with worker cloudflare  you can add secure header](https://dash.cloudflare.com)
-    - [netlify use _headers file](https://netlify.com)
+    - [with worker cloudflare  you can add secure header](https://stackoverflow.com/a/50797627/4859688)
+    - [netlify use _headers file](https://www.netlify.com/docs/headers-and-basic-auth/#custom-headers)
 ## TODO
 - add netlify.com secure header best practice
 - add CVS and Json export to report script
