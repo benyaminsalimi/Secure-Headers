@@ -1,6 +1,6 @@
 # Secure-Headers
 
-secure header report and best practices config for Apache, Nginx, lighttpd, Cloudflare, netlify 
+ secure header report and best practices config for Apache, Nginx, lighttpd, Cloudflare, netlify 
 
 ***attention : This repository is not ready to use, im trying to get it ready my free time***
 
