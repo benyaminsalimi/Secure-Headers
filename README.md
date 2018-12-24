@@ -88,7 +88,7 @@ how to add header to [Apache](), [nginx](), [lighttpd]()
     > ```setenv.add-response-header = ("Clear-Site-Data" => " cache ",)```
 
 ## best practice example config
-- [apache](/example/) or  [.htaccess](/example/.htaccess)
+- [apache](/example/nginx.conf) or  [.htaccess](/example/.htaccess)
 - [nigix](/example/)
 - [lighttpd](/example/)
 
