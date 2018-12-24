@@ -1,0 +1,19 @@
+#copy to .htaccess file in root directory or create that file and copy this gits content to it
+
+#Secure Header
+<IfModule mod_headers.c>
+  Header always append X-Frame-Options SAMEORIGIN
+  Header always set X-Frame-Options DENY
+  Header always set X-Xss-Protection "1; mode=block"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Strict-Transport-Security "max-age=15552000; includeSubDomains; preload"
+</IfModule>
+
+
+#https://www.askapache.com/htaccess/http-https-rewriterule-redirect/
+#https redirection
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
