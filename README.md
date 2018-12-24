@@ -73,11 +73,11 @@ how to add header to [Apache](), [nginx](), [lighttpd]()
 
 - [Feature-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Feature-Policy)
     - **apache**  
-    > ```Header set Feature-Policy "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none';" ```
+    > ```Header set Feature-Policy "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'" ```
     - **nginx**  
-    > ```add_header Feature-Policy "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none';";```
+    > ```add_header Feature-Policy "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'";```
     - **lighttpd**  
-    > ```setenv.add-response-header = ("Feature-Policy" => "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none';",) ```   
+    > ```setenv.add-response-header = ("Feature-Policy" => "accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'",) ```   
 ## optional
 - [Clear-Site-Data](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Clear-Site-Data)
     - **apache** : Edit your apache configuration file and add the following to your VirtualHost.
@@ -92,7 +92,7 @@ how to add header to [Apache](), [nginx](), [lighttpd]()
 - [nigix](/example/)
 - [lighttpd](/example/)
 - [Cloudflare Workers](/example/)
-- [netlify](/example/)
+- [netlify](/example/_headers)
 
 ## SSL
 - [Mozilla SSL Configuration Generator

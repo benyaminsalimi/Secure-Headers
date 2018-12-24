@@ -1,0 +1,11 @@
+# copy this file to root dir of your sit (/public, /sit, ...)
+# more info: https://www.netlify.com/docs/headers-and-basic-auth/
+/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+  Content-Security-Policy: script-src 'self'; object-src 'self'
+  Referrer-Policy: no-referrer
+  Feature-Policy: accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'
+  Strict-Transport-Security: max-age=31536000; includeSubdomains;
+  #Clear-Site-Data: cache
