@@ -1,34 +1,31 @@
 #!/usr/bin/python
+"""
+Pull requests are always welcome :)
+"""
 import getopt
 import requests
 import sys
+import json
+import datetime
 
-def main(argv):
-    url = ''
-    try:
-        opts, args = getopt.getopt(argv, "hu:", ["url="])
-    except getopt.GetoptError:
-        print('report.py -u <url>')
-        sys.exit(2)
-    for opt, arg in opts:
-        if opt == '-h':
-            print('report.py -u <url>')
-            sys.exit()
-        elif opt in ("-u", '--url'):
-            url = arg
 
+def report(url):
+    """
+    function to generate a report for each url
+    :param url:
+    :return: report list object
+    """
     # simple url validity
     try:
         report = requests.get(url)
     except:
         print("url is wrong or unreachable")
-        sys.exit()
+        return False
     if report.status_code != 200:
         print('status_code: ' + report.status_code)
-        sys.exit()
-
+        return False
+    # making report list
     output = {}
-
     try:
         output['X-Xss-Protection'] = report.headers['X-Xss-Protection']
     except:
@@ -73,10 +70,44 @@ def main(argv):
         output['Clear-Site-Data'] = report.headers['Clear-Site-Data']
     except:
         output['Clear-Site-Data'] = None
+    return output
 
-    info = 'set this header https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/'
-    for head in output:
-        print(head + " : " + output[head] if output[head] is not None else head + " : " + info + head)
+def main(argv):
+    url = ''
+    filename = ''
+    help_text = "report.py -u <url> -o <Output Filename>\n example: report.py -u https://certfa.com -o certfa "
+    try:
+        opts, args = getopt.getopt(argv, "hu:o", ["url=", "output"])
+    except getopt.GetoptError:
+        print(help_text)
+        sys.exit(2)
+    for opt, arg in opts:
+        if opt == '-h':
+            print(help_text)
+            sys.exit()
+        elif opt in ("-u", '--url'):
+            url = arg
+        elif opt in ("-o", '--output'):
+            filename = arg
+
+    this_sit_report = report(url)
+    """
+    #show only 
+    info = 'more information about this header https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/'
+    for head in this_sit_report:
+        print(head + " : " + this_sit_report[head] if this_sit_report[head] is not None else head + " : " + info + head)
+    """
+    filename = filename + "_" + str(datetime.datetime.now()) + '.json'
+    if this_sit_report is not False:
+        with open(filename, 'a') as outfile:
+            outfile.write('\n{ "' + url + '":\n')
+            json.dump(this_sit_report, outfile)
+            outfile.write('\n}\n')
+
+        print('Reported: ' + url)
+    else:
+        print('Fail :' + url)
 
 if __name__ == "__main__":
+    print(__doc__)
     main(sys.argv[1:])
