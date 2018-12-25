@@ -78,7 +78,7 @@ def report(url):
     site[url] = output
     return site
 
-def add_to_json(url, filename):
+def json_report(url, filename):
     """
     function to write a url report to filename.json file
     :param url:
@@ -119,6 +119,7 @@ def main(argv):
 
     # TODO: add CVS export
     filename = filename + "_" + str(datetime.datetime.now().date()) + '.json'
+
     if url_list != '':
         with open(filename, 'a') as outfile:
             outfile.write('[')
@@ -133,7 +134,7 @@ def main(argv):
         for url in urls:
             if url == '':
                 continue
-                add_to_json(url, filename)
+            json_report(url, filename)
 
         with open(filename, 'rb+') as outfile:
             # remove ',' at the end of file
@@ -143,7 +144,11 @@ def main(argv):
             outfile.write(']')
             outfile.close()
     else:
-        add_to_json(url, filename)
+        json_report(url, filename)
+        with open(filename, 'rb+') as outfile:
+            # remove ',' at the end of file
+            outfile.seek(-1, os.SEEK_END)
+            outfile.truncate()
 
     print("Reporting is Done \nYour output file : " + filename)
     sys.exit(2)
