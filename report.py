@@ -7,6 +7,7 @@ import requests
 import sys
 import json
 import datetime
+import os
 
 
 def report(url):
@@ -72,9 +73,12 @@ def report(url):
         output['Clear-Site-Data'] = report.headers['Clear-Site-Data']
     except:
         output['Clear-Site-Data'] = None
-    return output
 
-def json_report(url, filename):
+    site = {}
+    site[url] = output
+    return site
+
+def add_to_json(url, filename):
     """
     function to write a url report to filename.json file
     :param url:
@@ -84,9 +88,8 @@ def json_report(url, filename):
     this_sit_report = report(url)
     if this_sit_report is not False:
         with open(filename, 'a') as outfile:
-            outfile.write('\n{\n"' + url + '":\n')
             json.dump(this_sit_report, outfile)
-            outfile.write('\n},\n')
+            outfile.write(',')
 
         print('Success: ' + url)
     else:
@@ -130,13 +133,17 @@ def main(argv):
         for url in urls:
             if url == '':
                 continue
-            json_report(url, filename)
+                add_to_json(url, filename)
 
-        with open(filename, 'a') as outfile:
+        with open(filename, 'rb+') as outfile:
+            # remove ',' at the end of file
+            outfile.seek(-1, os.SEEK_END)
+            outfile.truncate()
+
             outfile.write(']')
             outfile.close()
     else:
-        json_report(url, filename)
+        add_to_json(url, filename)
 
     print("Reporting is Done \nYour output file : " + filename)
     sys.exit(2)
