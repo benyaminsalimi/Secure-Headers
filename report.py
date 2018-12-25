@@ -23,7 +23,7 @@ def report(url):
         return False
 
     if report.status_code != 200:
-        print('status_code: ' + report.status_code)
+        print('status_code: ', report.status_code)
         return False
 
     # making report list
@@ -88,9 +88,9 @@ def json_report(url, filename):
             json.dump(this_sit_report, outfile)
             outfile.write('\n},\n')
 
-        print('Reported: ' + url)
+        print('Success: ' + url)
     else:
-        print('Fail :' + url)
+        print('Fail:    ' + url)
 
 def main(argv):
     url = ''
@@ -138,7 +138,7 @@ def main(argv):
     else:
         json_report(url, filename)
 
-    print("Your report file is ready : " + filename)
+    print("Reporting is Done \nYour output file : " + filename)
     sys.exit(2)
     """
     #TODO: add report only arg
