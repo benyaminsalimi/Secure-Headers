@@ -23,6 +23,7 @@ python report.py -h #for help
 python report.py -u <url> -o <Output Filename> -l <Target List Filename>
 python report.py -u https://facebook.com -o FBreport # for check one site
 python report.py -l input.text -o report #for list input
+python report.py -l input.text -o report #for list input
 
 ```
 
@@ -53,6 +54,7 @@ how to add header to [Apache](), [nginx](), [lighttpd]()
     > ```setenv.add-response-header = ("X-Content-Type-Options" => "nosniff",)```
     
 - [Content-Security-Policy](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy) 
+    - **Attention: this part is essential, and it may need serious customization**
     - [report-uri (online tool to generate CSP)](https://report-uri.com/)
     - [csp cheat sheet](https://scotthelme.co.uk/csp-cheat-sheet/)
     - **apache** 
@@ -112,7 +114,7 @@ how to add header to [Apache](), [nginx](), [lighttpd]()
 ## TODO
 - add netlify.com secure headers best practice
 - add Cloudflare Workers custom headers config and best practice
-- add lighttpd and apache secure config. also, fix .htaccess config
+- add lighttpd and apache secure config. 
 - add CVS export to report script
 - add secure header suggestions to report script
 - add web server config generation to report script
