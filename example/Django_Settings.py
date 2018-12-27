@@ -10,10 +10,9 @@ MIDDLEWARE = [
     'csp.middleware.CSPMiddleware',
 ]
 ## this example is configed for recaptcha and google-analytics and bootstarpcdn, you can cofig this for your self
-### read the document for nonce hash
 CSP_DEFAULT_SRC = ("'none'",)
 CSP_SCRIPT_SRC = ("'self'", 'https://www.google.com/recaptcha/', 'www.google-analytics.com', 'https://www.gstatic.com/recaptcha/')
-CSP_INCLUDE_NONCE_IN = ['script-src']
+CSP_INCLUDE_NONCE_IN = ['script-src'] # read the document for nonce hash and template setting
 CSP_IMG_SRC = ("'self'", 'data:', 'www.google-analytics.com')
 CSP_OBJECT_SRC = ("'self'",)
 CSP_MEDIA_SRC = ("'self'",)
