@@ -1,5 +1,6 @@
 # copy this file to root dir of your sit (/public, /sit, ...)
 # more info: https://www.netlify.com/docs/headers-and-basic-auth/
+# my personal blog example is also here: https://github.com/benyaminsalimi/Benyamin.pw/blob/master/public/_headers
 /*
   X-Frame-Options: DENY
   X-XSS-Protection: 1; mode=block
