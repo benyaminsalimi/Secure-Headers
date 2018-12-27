@@ -57,6 +57,7 @@ how to add header to [Apache](), [nginx](), [lighttpd]()
     - **Attention: this part is essential, and it may need serious customization**
     - [report-uri (online tool to generate CSP)](https://report-uri.com/)
     - [csp cheat sheet](https://scotthelme.co.uk/csp-cheat-sheet/)
+    - [Google CSP Evaluator](https://csp-evaluator.withgoogle.com/) available as a [Chrome extension](https://chrome.google.com/webstore/detail/fjohamlofnakbnbfjkohkbdigoodcejf)
     - **apache** 
     > ```Header set Content-Security-Policy "script-src 'self'; object-src 'self'"```
     - **nginx**
