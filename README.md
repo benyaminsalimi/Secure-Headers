@@ -57,7 +57,6 @@ how to add header to [Apache](), [nginx](), [lighttpd]()
     - **Attention: this part is essential, and it may need serious customization**
     - [report-uri (online tool to generate CSP)](https://report-uri.com/)
     - [csp cheat sheet](https://scotthelme.co.uk/csp-cheat-sheet/)
-    - [Google CSP Evaluator](https://csp-evaluator.withgoogle.com/) available as a [Chrome extension](https://chrome.google.com/webstore/detail/fjohamlofnakbnbfjkohkbdigoodcejf)
     - **apache** 
     > ```Header set Content-Security-Policy "script-src 'self'; object-src 'self'"```
     - **nginx**
@@ -98,7 +97,8 @@ how to add header to [Apache](), [nginx](), [lighttpd]()
     - **lighttpd** : Add snippet below into configuration file to send X-Frame-Options header.
     > ```setenv.add-response-header = ("Clear-Site-Data" => " cache ",)```
 
-## best practice example config
+## best practices example config
+- [Django](/example/Django_Settings.py)
 - [apache](/example/) or  [.htaccess](/example/.htaccess)
 - [nigix](/example/nginx.conf)
 - [lighttpd](/example/)
